@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+</head>
+<body>
+    <h1>ทำนายโรคหัวใจ</h1>
+    <form method="POST" action="/predict">
+        <label for="age">อายุ:</label><br>
+        <input type="text" id="age" name="age" required><br><br>
+
+        <label for="sex">เพศ (1 ชาย, 0 หญิง):</label><br>
+        <input type="text" id="sex" name="sex" required><br><br>
+
+        <label for="cp">ความเจ็บหน้าอก(0-3):</label><br>
+        <input type="text" id="cp" name="cp" required><br><br>
+
+        <label for="trestbps">ความดันโลหิตขณะพัก:</label><br>
+        <input type="text" id="trestbps" name="trestbps" required><br><br>
+
+        <label for="chol">คอเลสเตอรอล:</label><br>
+        <input type="text" id="chol" name="chol" required><br><br>
+
+        <label for="fbs">น้ำตาลในเลือด (1= น้อยกว่า120 mg/dl, 0=อื่นๆ):</label><br>
+        <input type="text" id="fbs" name="fbs" required><br><br>
+
+        <label for="restecg">ผลจากการตรวจคลื่นไฟฟ้าหัวใจ (0-2):</label><br>
+        <input type="text" id="restecg" name="restecg" required><br><br>
+
+        <label for="thalach">อัตราการเต้นของหัวใจสูงสุด:</label><br>
+        <input type="text" id="thalach" name="thalach" required><br><br>
+
+        <label for="exang">อาการเจ็บหน้าอกจากการออกกำลังกาย (1 ใช่, 0 ไม่):</label><br>
+        <input type="text" id="exang" name="exang" required><br><br>
+
+        <label for="oldpeak">อาการปวดกล้ามเนื้อจากการออกกำลังกาย (ค่าความผิดปกติของการออกกำลังกาย):</label><br>
+        <input type="text" id="oldpeak" name="oldpeak" required><br><br>
+
+        <label for="slope">ลักษณะการเกิดกล้ามเนื้อหัวใจขาดเลือด (0-2):</label><br>
+        <input type="text" id="slope" name="slope" required><br><br>
+
+        <label for="ca">จำนวนหลอดเลือดหลักที่เห็นในภาพ (0-3):</label><br>
+        <input type="text" id="ca" name="ca" required><br><br>
+
+        <label for="thal">ภาวะธาลัสซีเมีย (1, 2, 3):</label><br>
+        <input type="text" id="thal" name="thal" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h2>คำตอบ: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
